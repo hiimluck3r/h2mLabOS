@@ -207,11 +207,11 @@ configmap:
       kubernetes.yaml: |
         mode: cluster
       settings.yaml: |
-        {{ homepage_bookmarks_yaml | replace('"', '') | indent(8) }}
+        {{ homepage_settings_yaml | replace('"', '') | indent(8) }}
       widgets.yaml: |
-        {{ homepage_bookmarks_yaml | replace('"', '') | indent(8) }}
+        {{ homepage_widgets_yaml | replace('"', '') | indent(8) }}
       services.yaml: |
-        {{ homepage_bookmarks_yaml | replace('"', '') | indent(8) }}
+        {{ homepage_services_yaml | replace('"', '') | indent(8) }}
       bookmarks.yaml: |
         {{ homepage_bookmarks_yaml | replace('"', '') | indent(8) }}
 
