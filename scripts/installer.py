@@ -203,6 +203,7 @@ with open("../config/storage_cfg.yml", 'r') as storage_file:
 with open("../group_vars/all/h2mcfg.yml", 'w') as sys_file:
     sys_file.write(f"""---
 #Cluster config
+https: {'true' if cloudflare_token!='' else 'false'}
 production_https: {production_https}
 kube_vip_leader_ip: {cp_vip} #Control-plane Virtual IP
 cidr_global: {cidr_global} #CIDR-based kube-vip LoadBalancer IP range
@@ -211,7 +212,6 @@ domains:
 user: {user}
 kube_vip_interface: {kube_vip_interface}
 kube_vip_version: v0.6.4
-https: {'true' if cloudflare_token!='' else 'false'}
 
 #Storage config
 {storage_cfg}

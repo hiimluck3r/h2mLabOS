@@ -19,10 +19,10 @@
     #- "/etc/rancher/k3s/k3s.yaml"
     - "~/.kube/config"
 
-- name: Get cluster-node config
+- name: Get multi-node config
   fetch: #something happens here, check
     src: ~/.kube/config
-    dest: kubeconfigs/cluster/config
+    dest: kubeconfigs/singlenode/config
     flat: yes
 
 - name: Create the RBAC kube-vip settings
