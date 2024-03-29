@@ -46,3 +46,7 @@
     src: ~/.kube/config
     dest: kubeconfigs/multinode/config
     flat: yes
+
+- name: Pause for 15 seconds to allow master resolve leader ip
+  ansible.builtin.pause:
+    seconds: 15
