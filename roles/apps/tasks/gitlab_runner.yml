@@ -11,6 +11,12 @@
     domain: thiswillbe.ignored
     http_port: 1000
 
+- name: Add GitLab helm repo
+  kubernetes.core.helm_repository:
+    name: gitlab
+    repo_url: "https://charts.gitlab.io"
+  when: gitlab|default(false)|bool == true
+
 - name: Deploy gitlab-runner with Helm
   kubernetes.core.helm:
     name: "{{ item.split('|')[0] }}-gitlab-runner"
