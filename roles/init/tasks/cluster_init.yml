@@ -19,7 +19,7 @@
     #- "/etc/rancher/k3s/k3s.yaml"
     - "~/.kube/config"
 
-- name: Get multi-node config
+- name: Get single-node config
   fetch: #something happens here, check
     src: ~/.kube/config
     dest: kubeconfigs/singlenode/config

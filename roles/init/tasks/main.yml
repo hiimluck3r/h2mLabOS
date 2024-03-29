@@ -9,6 +9,10 @@
     file: leader_init.yml
   when: inventory_hostname in groups["leader"]
 
+- name: Pause for 15 seconds to allow master resolve leader ip
+  ansible.builtin.pause:
+    seconds: 15
+
 - name: Configurate quorum-nodes for k3s cluster
   ansible.builtin.import_tasks:
     file: quorum_init.yml

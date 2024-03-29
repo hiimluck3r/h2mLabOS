@@ -31,9 +31,19 @@
     --controlplane \
     --services \
     --arp \
-    --leaderElection | sudo tee /var/lib/rancher/k3s/server/manifests/kube-vip.yaml"
+    --leaderElection"
   with_list:
     - "sudo ctr run --rm --net-host ghcr.io/kube-vip/kube-vip:{{ kube_vip_version }} vip /kube-vip"
+  register: manifest
+
+- name: Print manifest
+  debug:
+    msg: "{{ manifest.results.0.stdout_lines | join('\n') }}"
+
+- name: Start kube-vip daemon-set
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ manifest.results.0.stdout_lines | join('\n') }}"
 
 - name: Change localhost to node IP
   shell: "sed -i 's|127.0.0.1|{{ kube_vip_leader_ip }}|' {{ item }}"
@@ -46,7 +56,3 @@
     src: ~/.kube/config
     dest: kubeconfigs/multinode/config
     flat: yes
-
-- name: Pause for 15 seconds to allow master resolve leader ip
-  ansible.builtin.pause:
-    seconds: 15
