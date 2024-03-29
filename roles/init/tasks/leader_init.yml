@@ -29,6 +29,7 @@
     --inCluster \
     --taint \
     --controlplane \
+    --services \
     --arp \
     --leaderElection | sudo tee /var/lib/rancher/k3s/server/manifests/kube-vip.yaml"
   with_list:
