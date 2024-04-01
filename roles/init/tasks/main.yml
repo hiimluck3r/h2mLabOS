@@ -11,7 +11,7 @@
 
 - name: Pause so leader can take kubevip address
   ansible.builtin.pause:
-    seconds: 10
+    seconds: 15
 
 - name: Configurate quorum-nodes for k3s cluster
   ansible.builtin.import_tasks:

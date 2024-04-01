@@ -9,6 +9,7 @@
     app: "{{ dashdot_subdomain }}"
     domain: example1.com
     serviceName: "{{ dashdot_subdomain }}"
+    strip_path: true
     http_port: 3001
 
 - name: Deploy dashdot with Helm
