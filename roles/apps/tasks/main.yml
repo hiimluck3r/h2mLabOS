@@ -6,6 +6,7 @@
     - "pagenotfound"
     - "monitoring"
     - "homepage"
+    - "gitlab"
     - "gitlab_runner"
     - "dashdot"
     - "castopod"

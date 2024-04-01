@@ -1,1 +1,1 @@
-ansible-playbook -i ../inventory --ask-vault-pass --ask-become-pass ../site.yml
+ansible-playbook -i ../inventory --ask-vault-pass --ask-become-pass ../provision.yml

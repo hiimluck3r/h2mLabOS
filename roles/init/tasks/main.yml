@@ -1,4 +1,9 @@
 ---
+- name: Delete virtual kubevip ip
+  shell: "sudo ip addr del {{ kube_vip_leader_ip }}/32 dev {{ kube_vip_interface }}"
+  ignore_errors: true
+  when: inventory_hostname in groups["k3c"]
+
 - name: Configurate single-node k3s cluster
   ansible.builtin.import_tasks:
     file: cluster_init.yml

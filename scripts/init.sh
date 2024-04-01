@@ -1,0 +1,1 @@
+ansible-playbook -i ../inventory --ask-vault-pass --ask-become-pass ../init.yml

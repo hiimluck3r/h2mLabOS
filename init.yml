@@ -57,8 +57,3 @@
 
   roles:
     - init
-
-- hosts: leader, cluster
-  roles:
-    - provision
-    - apps
