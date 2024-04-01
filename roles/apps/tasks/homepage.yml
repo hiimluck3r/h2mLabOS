@@ -8,6 +8,7 @@
   set_fact:
     app: "{{ homepage_subdomain }}"
     domain: example1.com
+    serviceName: "{{ homepage_subdomain }}"
     http_port: 10352
 
 - name: Add truecharts helm repo

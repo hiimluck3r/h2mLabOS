@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ apache_subdomain }}"
     domain: example1.com
+    serviceName: "{{ apache_subdomain }}"
     http_port: 8001
 
 - name: Render apache manifests

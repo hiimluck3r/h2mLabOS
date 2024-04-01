@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ littlelink_subdomain }}"
     domain: example1.com
+    serviceName: "{{ littlelink_subdomain }}"
     http_port: 8002
 
 - name: Render littlelink manifests

@@ -4,10 +4,9 @@
     path: "~/manifests/pagenotfound"
     state: directory
 
-- name: Set app and port variables for pagenotfound app
+- name: Set variables for pagenotfound app
   set_fact:
     strip_path: true
-    app: pagenotfound
     domain: third.com
     http_port: 404
 

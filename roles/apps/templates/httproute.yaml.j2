@@ -16,6 +16,6 @@ spec:
         type: PathPrefix
         value: /
     backendRefs:
-    - name: {{ app }}
+    - name: {{ serviceName }}
       kind: Service
       port: {{ http_port }}

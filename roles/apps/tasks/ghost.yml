@@ -8,6 +8,7 @@
   set_fact:
     app: "{{ ghost_subdomain }}"
     domain: example1.com
+    serviceName: "{{ ghost_subdomain }}"
     http_port: 80 #the only valid port for ghost installation is 80, otherwise it gets rewritten
 
 - name: Deploy ghost with Helm

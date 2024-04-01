@@ -8,6 +8,7 @@
   set_fact:
     app: "{{ dashdot_subdomain }}"
     domain: example1.com
+    serviceName: "{{ dashdot_subdomain }}"
     http_port: 3001
 
 - name: Deploy dashdot with Helm

@@ -9,6 +9,7 @@
   set_fact:
     app: "gitlab-runners"
     domain: thiswillbe.ignored
+    serviceName: thiswillbe.ignored
     http_port: 1000
 
 - name: Add GitLab helm repo

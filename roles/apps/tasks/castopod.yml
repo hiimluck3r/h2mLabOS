@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ castopod_subdomain }}"
     domain: example1.com
+    serviceName: "{{ castopod_subdomain }}"
     http_port: 8007
 
 - name: Render castopod manifests

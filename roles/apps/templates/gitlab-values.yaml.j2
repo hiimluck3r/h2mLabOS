@@ -10,8 +10,17 @@ global:
     enabled: false
     configureCertmanager: false
   hosts:
-    domain: {{ app }}.{{ domain }}
-    https: true
+    domain: {{ domain }}
+    https: {{ https }}
+    gitlab:
+      name: {{ app }}.{{ domain }}
+      https: {{ https }}
+    registry:
+      name: registry.{{ domain }}
+      https: {{ https }}
+    minio:
+      name: minio.{{ domain }}
+      https: {{ https }}
   enterpriseImages:
     # Default repositories used to pull Gitlab Enterprise Edition images.
     # See the image.repository and workhorse.repository template helpers.
@@ -65,6 +74,7 @@ nginx-ingress:
 
 gitlab-runner:
   enabled: {{ gitlab_runner_enabled }}
+
 
 certmanager:
   installCRDs: false

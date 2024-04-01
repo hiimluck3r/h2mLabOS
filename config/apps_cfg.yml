@@ -26,7 +26,7 @@ castopod_redis_password: changeme
 castopod_mysql_password: changeme
 
 #Monitoring
-monitoring_subdomain: monitoring-grafana #the only one that is usable, can be fixed with using specific httproute with subdomain!=servicename
+monitoring_subdomain: grafana
 
 #pagenotfound
 pagenotfound_subdomain: '*'

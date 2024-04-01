@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ monitoring_subdomain }}" #monitoring-grafana is the only one that is being indexed for now (maybe)
     domain: example1.com
+    serviceName: "monitoring-grafana"
     http_port: 8005
 
 - name: Add prometheus-community helm repo

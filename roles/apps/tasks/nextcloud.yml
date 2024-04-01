@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ nextcloud_subdomain }}"
     domain: example1.com
+    serviceName: "{{ nextcloud_subdomain }}"
     http_port: 8004
 
 - name: Add NextCloud helm repo

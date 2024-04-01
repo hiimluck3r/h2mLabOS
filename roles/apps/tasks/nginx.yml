@@ -9,6 +9,7 @@
     strip_path: true
     app: "{{ nginx_subdomain }}"
     domain: example1.com
+    serviceName: "{{ nginx_subdomain }}"
     http_port: 8000
 
 - name: Render nginx manifests

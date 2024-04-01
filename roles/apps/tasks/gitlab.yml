@@ -8,6 +8,7 @@
   set_fact:
     app: "{{ gitlab_subdomain }}"
     domain: example1.com
+    serviceName: gitlab-webservice-default
     http_port: 8181
 
 - name: Add GitLab helm repo

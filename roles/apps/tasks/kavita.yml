@@ -15,6 +15,7 @@
     strip_path: false
     app: "{{ kavita_subdomain }}"
     domain: example1.com
+    serviceName: "{{ kavita_subdomain }}"
     http_port: 8006
 
 - name: Add truecharts helm repo
