@@ -2,6 +2,9 @@
 # This is a YAML-formatted file.
 
 global:
+  initialRootPassword: 
+    secret: RELEASE-gitlab-initial-root-password
+    key: {{ password }}
   workhorse:
     serviceName: "gitlab"
   time_zone: {{ TZ }}
@@ -64,10 +67,6 @@ global:
     #     key:
     #   database: gitlab_clickhouse_main_production
     #   url:
-
-    initialRootPassword: 
-        secret: RELEASE-gitlab-initial-root-password
-        key: {{ password }}
 
 nginx-ingress:
   enabled: false
